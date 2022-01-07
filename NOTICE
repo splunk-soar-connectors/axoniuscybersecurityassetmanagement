@@ -1,14 +1,27 @@
 Splunk SOAR Axonius Cybersecurity Asset Management
-Copyright 2021 Splunk Inc.
+Copyright (c) Axonius, 2018-2021
 
 Third-party Software Attributions:
 
-Library: pudb
-Version: 2019.2
+Library: PySocks
+Version: 1.7.1
+License: BSD 2
+Copyright 2006 Dan-Haim
+Copyright 2006 Dan-Haim
+
+Library: axonius-api-client
+Version: 4.10.7
 License: MIT
-Copyright 2009 Andreas Kloeckner and contributors
+Copyright 2020 Axonius
+
+Library: pycparser
+Version: 2.21
+License: BSD 3
+Copyright 2008-2020 Eli Bendersky
+Copyright parser in Python
+Copyright parser in Python
 
 Library: requests
-Version: 2.25.0
+Version: 2.25.1
 License: Apache 2.0
 Kenneth Reitz
