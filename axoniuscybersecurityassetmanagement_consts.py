@@ -3,8 +3,8 @@
 # Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt)
 
 
-API_KEY = "api_key"
-API_SECRET = "api_secret"
+API_KEY = "api_key"  # pragma: allowlist secret
+API_SECRET = "api_secret"  # pragma: allowlist secret
 URL_KEY = "url"
 PROXY_URL_KEY = "proxy_url"
 SQ_NAME_KEY = "sq_name"

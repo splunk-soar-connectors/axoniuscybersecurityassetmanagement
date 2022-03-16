@@ -4,16 +4,17 @@
 
 # Phantom App imports
 import json
-import requests
 import os
 from typing import Any, List, Optional, Union
 
 import phantom.app as phantom
+import requests
 from axonius_api_client import Connect
 from axonius_api_client.api.assets.asset_mixin import AssetMixin
 from axonius_api_client.tools import dt_parse, strip_left
 from phantom.action_result import ActionResult
 from phantom.base_connector import BaseConnector
+
 from axoniuscybersecurityassetmanagement_consts import *
 
 
@@ -649,8 +650,9 @@ class AxoniusConnector(BaseConnector):
 
 if __name__ == "__main__":
 
-    import pudb
     import argparse
+
+    import pudb
 
     pudb.set_trace()
 

@@ -9,12 +9,12 @@
     "product_name": "Axonius",
     "product_version_regex": ".*",
     "publisher": "Axonius",
-    "license": "Copyright (c) Axonius, 2018-2021",
+    "license": "Copyright (c) Axonius, 2018-2022",
     "app_version": "2.1.2",
     "utctime_updated": "2022-01-07T21:37:39.000000Z",
     "package_name": "phantom_axoniuscybersecurityassetmanagement",
     "main_module": "axoniuscybersecurityassetmanagement_connector.py",
-    "min_phantom_version": "4.10.0.40961",
+    "min_phantom_version": "5.1.0",
     "python_version": "3",
     "latest_tested_versions": [
         "Cloud API, February 3, 2020"
@@ -28,7 +28,7 @@
             },
             {
                 "module": "XlsxWriter",
-                "input_file": "wheels/py3/XlsxWriter-3.0.2-py3-none-any.whl"
+                "input_file": "wheels/py3/XlsxWriter-3.0.3-py3-none-any.whl"
             },
             {
                 "module": "axonius_api_client",
@@ -52,11 +52,11 @@
             },
             {
                 "module": "click",
-                "input_file": "wheels/py3/click-8.0.3-py3-none-any.whl"
+                "input_file": "wheels/py3/click-8.0.4-py3-none-any.whl"
             },
             {
                 "module": "cryptography",
-                "input_file": "wheels/py36/cryptography-36.0.1-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+                "input_file": "wheels/py36/cryptography-36.0.2-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
                 "module": "dataclasses",
@@ -124,7 +124,7 @@
             },
             {
                 "module": "typing_extensions",
-                "input_file": "wheels/py3/typing_extensions-4.0.1-py3-none-any.whl"
+                "input_file": "wheels/py3/typing_extensions-4.1.1-py3-none-any.whl"
             },
             {
                 "module": "typing_inspect",
@@ -1153,7 +1153,7 @@
             },
             {
                 "module": "XlsxWriter",
-                "input_file": "wheels/py3/XlsxWriter-3.0.2-py3-none-any.whl"
+                "input_file": "wheels/py3/XlsxWriter-3.0.3-py3-none-any.whl"
             },
             {
                 "module": "axonius_api_client",
@@ -1177,11 +1177,11 @@
             },
             {
                 "module": "click",
-                "input_file": "wheels/py3/click-8.0.3-py3-none-any.whl"
+                "input_file": "wheels/py3/click-8.0.4-py3-none-any.whl"
             },
             {
                 "module": "cryptography",
-                "input_file": "wheels/py36/cryptography-36.0.1-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+                "input_file": "wheels/py36/cryptography-36.0.2-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
                 "module": "dataclasses_json",
@@ -1197,7 +1197,7 @@
             },
             {
                 "module": "marshmallow",
-                "input_file": "wheels/py3/marshmallow-3.14.1-py3-none-any.whl"
+                "input_file": "wheels/py3/marshmallow-3.15.0-py3-none-any.whl"
             },
             {
                 "module": "marshmallow_enum",
@@ -1212,12 +1212,20 @@
                 "input_file": "wheels/shared/mypy_extensions-0.4.3-py2.py3-none-any.whl"
             },
             {
+                "module": "packaging",
+                "input_file": "wheels/py3/packaging-21.3-py3-none-any.whl"
+            },
+            {
                 "module": "pyOpenSSL",
                 "input_file": "wheels/shared/pyOpenSSL-22.0.0-py2.py3-none-any.whl"
             },
             {
                 "module": "pycparser",
                 "input_file": "wheels/shared/pycparser-2.21-py2.py3-none-any.whl"
+            },
+            {
+                "module": "pyparsing",
+                "input_file": "wheels/py3/pyparsing-3.0.7-py3-none-any.whl"
             },
             {
                 "module": "python_dateutil",
@@ -1241,7 +1249,7 @@
             },
             {
                 "module": "typing_extensions",
-                "input_file": "wheels/py3/typing_extensions-4.0.1-py3-none-any.whl"
+                "input_file": "wheels/py3/typing_extensions-4.1.1-py3-none-any.whl"
             },
             {
                 "module": "typing_inspect",
