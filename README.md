@@ -2,15 +2,15 @@
 # Axonius Cybersecurity Asset Management
 
 Publisher: Axonius  
-Connector Version: 2\.1\.1  
+Connector Version: 2\.1\.2  
 Product Vendor: Axonius  
 Product Name: Axonius  
 Product Version Supported (regex): "\.\*"  
-Minimum Product Version: 4\.10\.0\.40961  
+Minimum Product Version: 5\.1\.0  
 
 This app integrates with the Axonius Cybersecurity Asset Management Platform to enrich asset data for investigations
 
-[comment]: # " File: readme.md"
+[comment]: # " File: README.md"
 [comment]: # ""
 [comment]: # "    Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt)"
 [comment]: # ""
