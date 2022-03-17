@@ -1,19 +1,32 @@
 # File: axoniuscybersecurityassetmanagement_connector.py
 #
-# Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt)
+# Copyright (c) Axonius, 2018-2022
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software distributed under
+# the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+# either express or implied. See the License for the specific language governing permissions
+# and limitations under the License.
+#
 
 # Phantom App imports
 import json
-import requests
 import os
 from typing import Any, List, Optional, Union
 
 import phantom.app as phantom
+import requests
 from axonius_api_client import Connect
 from axonius_api_client.api.assets.asset_mixin import AssetMixin
 from axonius_api_client.tools import dt_parse, strip_left
 from phantom.action_result import ActionResult
 from phantom.base_connector import BaseConnector
+
 from axoniuscybersecurityassetmanagement_consts import *
 
 
@@ -649,8 +662,9 @@ class AxoniusConnector(BaseConnector):
 
 if __name__ == "__main__":
 
-    import pudb
     import argparse
+
+    import pudb
 
     pudb.set_trace()
 
