@@ -1,5 +1,5 @@
 Splunk SOAR Axonius Cybersecurity Asset Management
-Copyright (c) Axonius, 2018-2021
+Copyright (c) Axonius, 2018-2022
 
 Third-party Software Attributions:
 
@@ -9,10 +9,32 @@ License: BSD 2
 Copyright 2006 Dan-Haim
 Copyright 2006 Dan-Haim
 
-Library: axonius-api-client
-Version: 4.10.7
+Library: XlsxWriter
+Version: 3.0.3
+License: BSD 2
+Copyright 2013-2022 John McNamara <jmcnamara@cpan.org>
+
+Library: cachetools
+Version: 5.0.0
 License: MIT
-Copyright 2020 Axonius
+Copyright 2014-2021 Thomas Kemmer
+Copyright 2014-2021 Thomas Kemmer
+
+Library: fuzzyfinder
+Version: 2.1.0
+License: BSD License (BSD)
+Copyright (c) 2015, Amjith Ramanujam
+
+Library: importlib-metadata
+Version: 4.11.3
+License: Apache 2.0
+Copyright 2017-2019 Jason R. Coombs
+
+Library: packaging
+Version: 21.3
+License: Apache 2.0
+License: BSD 2
+Copyright Donald Stufft and individual contributors
 
 Library: pycparser
 Version: 2.21
@@ -21,7 +43,38 @@ Copyright 2008-2020 Eli Bendersky
 Copyright parser in Python
 Copyright parser in Python
 
+Library: python-dateutil
+Version: 2.8.2
+License: Apache 2.0
+License: BSD 3
+Copyright 2015 - Paul Ganssle <paul@ganssle.io>
+Copyright 2015 - dateutil contributors (see AUTHORS file)
+Copyright 2017 Paul Ganssle <paul@ganssle.io>
+Copyright 2017 dateutil contributors (see AUTHORS file)
+
+Library: python-dotenv
+Version: 0.19.2
+License: BSD 3
+Copyright 2013 Jacob Kaplan-Moss
+Copyright 2013 Ted Tieken
+Copyright 2014 Saurabh Kumar
+
 Library: requests
 Version: 2.25.1
 License: Apache 2.0
 Kenneth Reitz
+
+Library: tabulate
+Version: 0.8.9
+License: MIT
+Copyright 2011-2020 Sergey Astanin and contributors
+
+Library: typing-inspect
+Version: 0.7.1
+License: MIT
+Copyright 2017-2019 Ivan Levkivskyi
+
+Library: xmltodict
+Version: 0.12.0
+License: MIT
+Copyright 2012 Martin Blech and individual contributors
