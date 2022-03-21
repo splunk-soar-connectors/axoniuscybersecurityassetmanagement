@@ -21,7 +21,7 @@
     ],
     "app_wizard_version": "1.0.0",
     "pip3_dependencies": {
-        "pypi": [
+        "wheel": [
             {
                 "module": "PySocks",
                 "input_file": "wheels/py3/PySocks-1.7.1-py3-none-any.whl"
@@ -132,7 +132,7 @@
             },
             {
                 "module": "urllib3",
-                "input_file": "wheels/shared/urllib3-1.26.8-py2.py3-none-any.whl"
+                "input_file": "wheels/shared/urllib3-1.26.9-py2.py3-none-any.whl"
             },
             {
                 "module": "xmltodict",
@@ -1257,7 +1257,7 @@
             },
             {
                 "module": "urllib3",
-                "input_file": "wheels/shared/urllib3-1.26.8-py2.py3-none-any.whl"
+                "input_file": "wheels/shared/urllib3-1.26.9-py2.py3-none-any.whl"
             },
             {
                 "module": "xmltodict",
