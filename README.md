@@ -6,7 +6,7 @@ Connector Version: 2.1.3
 Product Vendor: Axonius  
 Product Name: Axonius  
 Product Version Supported (regex): ".\*"  
-Minimum Product Version: 5.1.0  
+Minimum Product Version: 5.5.0  
 
 This app integrates with the Axonius Cybersecurity Asset Management Platform to enrich asset data for investigations
 
