@@ -14,7 +14,7 @@
     "utctime_updated": "2022-01-07T21:37:39.000000Z",
     "package_name": "phantom_axoniuscybersecurityassetmanagement",
     "main_module": "axoniuscybersecurityassetmanagement_connector.py",
-    "min_phantom_version": "5.1.0",
+    "min_phantom_version": "5.5.0",
     "python_version": "3",
     "latest_tested_versions": [
         "Cloud API, February 3, 2020"

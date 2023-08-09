@@ -124,21 +124,21 @@ class AxoniusConnector(BaseConnector):
         :return: error message
         """
 
-        error_code = ERR_CODE_MSG
-        error_msg = ERR_MSG_UNAVAILABLE
+        err_code = ERR_CODE_MSG
+        err_msg = ERR_MSG_UNAVAILABLE
 
         try:
             if e.args:
                 if len(e.args) > 1:
-                    error_code = e.args[0]
-                    error_msg = e.args[1]
+                    err_code = e.args[0]
+                    err_msg = e.args[1]
                 elif len(e.args) == 1:
-                    error_code = ERR_CODE_MSG
-                    error_msg = e.args[0]
+                    err_code = ERR_CODE_MSG
+                    err_msg = e.args[0]
         except:
             pass
 
-        return "Error Code: {0}. Error Message: {1}".format(error_code, error_msg)
+        return "Error Code: {0}. Error Message: {1}".format(err_code, err_msg)
 
     def _create_client(self, action_result: phantom.ActionResult) -> bool:
         """Create an instance of Axonius API Client."""
@@ -146,8 +146,8 @@ class AxoniusConnector(BaseConnector):
             self.debug_print("Creating Axonius API Client")
             self._client: Connect = Connect(**self._client_args)
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Could not create Axonius API Client: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Could not create Axonius API Client: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         return phantom.APP_SUCCESS
@@ -163,8 +163,8 @@ class AxoniusConnector(BaseConnector):
         try:
             self._client.start()
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to login to Axonius instance at {self._url}: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to login to Axonius instance at {self._url}: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         progress = f"Successfully logged in to Axonius {self._client}"
@@ -197,8 +197,8 @@ class AxoniusConnector(BaseConnector):
             sq_name: str = get_str_arg(key=SQ_NAME_KEY, param=param, required=True)
             max_rows: int = get_int_arg(key=MAX_ROWS_KEY, param=param, default=MAX_ROWS)
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse parameters: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse parameters: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         try:
@@ -215,8 +215,8 @@ class AxoniusConnector(BaseConnector):
                 name=sq_name, max_rows=max_rows, field_null=True, field_null_value=[]
             )
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to fetch Saved Query: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to fetch Saved Query: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         progress = f"Fetched {len(assets)} {obj_type} from Saved Query {sq_name!r}"
@@ -242,8 +242,8 @@ class AxoniusConnector(BaseConnector):
             hostname: str = get_str_arg(key=HOSTNAME_KEY, param=param, required=True)
             max_rows: int = get_int_arg(key=MAX_ROWS_KEY, param=param, default=MAX_ROWS)
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse parameters: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse parameters: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         additional_fields = []
@@ -255,8 +255,8 @@ class AxoniusConnector(BaseConnector):
                 additional_fields = [x.strip() for x in additional_fields_str.split(',')]
                 additional_fields = list(filter(None, additional_fields))
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse additional fields: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse additional fields: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         try:
@@ -278,8 +278,8 @@ class AxoniusConnector(BaseConnector):
                 field_null_value=[],
             )
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to fetch device: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to fetch device: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         progress = f"Fetched {len(assets)} {obj_type} with {hostname!r} from Axonius"
@@ -305,8 +305,8 @@ class AxoniusConnector(BaseConnector):
             ip: str = get_str_arg(key=IP_KEY, param=param, required=True)
             max_rows: int = get_int_arg(key=MAX_ROWS_KEY, param=param, default=MAX_ROWS)
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse parameters: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse parameters: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         additional_fields = []
@@ -318,8 +318,8 @@ class AxoniusConnector(BaseConnector):
                 additional_fields = [x.strip() for x in additional_fields_str.split(',')]
                 additional_fields = list(filter(None, additional_fields))
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse additional fields: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse additional fields: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         try:
@@ -341,8 +341,8 @@ class AxoniusConnector(BaseConnector):
                 field_null_value=[],
             )
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to fetch device: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to fetch device: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         progress = f"Fetched {len(assets)} {obj_type} with {ip!r} from Axonius"
@@ -368,8 +368,8 @@ class AxoniusConnector(BaseConnector):
             mac: str = get_str_arg(key=MAC_KEY, param=param, required=True)
             max_rows: int = get_int_arg(key=MAX_ROWS_KEY, param=param, default=MAX_ROWS)
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse parameters: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse parameters: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         additional_fields = []
@@ -381,8 +381,8 @@ class AxoniusConnector(BaseConnector):
                 additional_fields = [x.strip() for x in additional_fields_str.split(',')]
                 additional_fields = list(filter(None, additional_fields))
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse additional fields: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse additional fields: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         try:
@@ -404,8 +404,8 @@ class AxoniusConnector(BaseConnector):
                 field_null_value=[],
             )
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to fetch device: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to fetch device: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         progress = f"Fetched {len(assets)} {obj_type} with {mac!r} from Axonius"
@@ -431,8 +431,8 @@ class AxoniusConnector(BaseConnector):
             sq_name: str = get_str_arg(key=SQ_NAME_KEY, param=param, required=True)
             max_rows: int = get_int_arg(key=MAX_ROWS_KEY, param=param, default=MAX_ROWS)
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse parameters: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse parameters: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         try:
@@ -449,8 +449,8 @@ class AxoniusConnector(BaseConnector):
                 name=sq_name, max_rows=max_rows, field_null=True, field_null_value=[]
             )
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to fetch Saved Query: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to fetch Saved Query: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         progress = f"Fetched {len(assets)} {obj_type} from Saved Query {sq_name!r}"
@@ -476,8 +476,8 @@ class AxoniusConnector(BaseConnector):
             mail: str = get_str_arg(key=MAIL_KEY, param=param, required=True)
             max_rows: int = get_int_arg(key=MAX_ROWS_KEY, param=param, default=MAX_ROWS)
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse parameters: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse parameters: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         additional_fields = []
@@ -489,8 +489,8 @@ class AxoniusConnector(BaseConnector):
                 additional_fields = [x.strip() for x in additional_fields_str.split(',')]
                 additional_fields = list(filter(None, additional_fields))
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse additional fields: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse additional fields: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         try:
@@ -512,8 +512,8 @@ class AxoniusConnector(BaseConnector):
                 field_null_value=[],
             )
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to fetch users: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to fetch users: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         progress = f"Fetched {len(assets)} {obj_type} with {mail!r} from Axonius"
@@ -539,8 +539,8 @@ class AxoniusConnector(BaseConnector):
             username: str = get_str_arg(key=USERNAME_KEY, param=param, required=True)
             max_rows: int = get_int_arg(key=MAX_ROWS_KEY, param=param, default=MAX_ROWS)
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse parameters: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse parameters: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         additional_fields = []
@@ -552,8 +552,8 @@ class AxoniusConnector(BaseConnector):
                 additional_fields = [x.strip() for x in additional_fields_str.split(',')]
                 additional_fields = list(filter(None, additional_fields))
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to parse additional fields: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to parse additional fields: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         try:
@@ -575,8 +575,8 @@ class AxoniusConnector(BaseConnector):
                 field_null_value=[],
             )
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            status = f"Failed to fetch users: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            status = f"Failed to fetch users: {err_message}"
             return action_result.set_status(phantom.APP_ERROR, status)
 
         progress = f"Fetched {len(assets)} {obj_type} with {username!r} from Axonius"
@@ -616,8 +616,8 @@ class AxoniusConnector(BaseConnector):
             elif action_id == "users_by_username":
                 ret_val = self._handle_users_by_username(param=param, obj_type="users")
         except Exception as exc:
-            err_msg = self._get_error_message_from_exception(exc)
-            progress = f"Exception in {action_id}: {err_msg}"
+            err_message = self._get_error_message_from_exception(exc)
+            progress = f"Exception in {action_id}: {err_message}"
             self.save_progress(progress)
             ret_val = phantom.APP_ERROR
 
