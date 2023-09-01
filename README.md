@@ -2,11 +2,11 @@
 # Axonius Cybersecurity Asset Management
 
 Publisher: Axonius  
-Connector Version: 2\.1\.2  
+Connector Version: 2.1.2  
 Product Vendor: Axonius  
 Product Name: Axonius  
-Product Version Supported (regex): "\.\*"  
-Minimum Product Version: 5\.1\.0  
+Product Version Supported (regex): ".\*"  
+Minimum Product Version: 5.5.0  
 
 This app integrates with the Axonius Cybersecurity Asset Management Platform to enrich asset data for investigations
 
@@ -28,7 +28,7 @@ This app integrates with the Axonius Cybersecurity Asset Management Platform to 
 ## Playbook Backward Compatibility
 
 -   A new action parameter has been added in the below existing actions. Hence, it is requested to
-    the end-user to please update their existing playbooks by re-inserting \| modifying \| deleting
+    the end-user to please update their existing playbooks by re-inserting | modifying | deleting
     the corresponding action blocks.
 
       
@@ -45,7 +45,7 @@ This app integrates with the Axonius Cybersecurity Asset Management Platform to 
 
 -   The version 2.0.0 of this application is a complete rewrite and is not backward compatible.
     Hence, it is requested to the end-user to please update their existing playbooks by re-inserting
-    \| modifying \| deleting the corresponding action blocks to ensure the correct functioning of
+    | modifying | deleting the corresponding action blocks to ensure the correct functioning of
     the playbooks created on the earlier versions of the app. If the end-user does not want to
     upgrade their playbooks, they can remain on or downgrade to the old version(v1.0.0).
 
@@ -55,10 +55,10 @@ The below configuration variables are required for this Connector to operate.  T
 
 VARIABLE | REQUIRED | TYPE | DESCRIPTION
 -------- | -------- | ---- | -----------
-**api\_key** |  required  | password | API Key
-**api\_secret** |  required  | password | API Secret
+**api_key** |  required  | password | API Key
+**api_secret** |  required  | password | API Secret
 **url** |  required  | string | Axonius Instance URL
-**proxy\_url** |  optional  | string | HTTPS Proxy URL
+**proxy_url** |  optional  | string | HTTPS Proxy URL
 
 ### Supported Actions  
 [test connectivity](#action-test-connectivity) - Validate the asset configuration for connectivity using the supplied configuration  
@@ -91,29 +91,29 @@ Read only: **True**
 #### Action Parameters
 PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 --------- | -------- | ----------- | ---- | --------
-**sq\_name** |  required  | The name of the Axonius saved query | string | 
-**max\_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
+**sq_name** |  required  | The name of the Axonius saved query | string | 
+**max_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.parameter\.sq\_name | string | 
-action\_result\.parameter\.max\_rows | numeric | 
-action\_result\.data\.\*\.adapter\_list\_length | numeric | 
-action\_result\.data\.\*\.adapters | string | 
-action\_result\.data\.\*\.internal\_axon\_id | string | 
-action\_result\.data\.\*\.aggregated\_hostname | string |  `host name` 
-action\_result\.data\.\*\.aggregated\_name | string | 
-action\_result\.data\.\*\.aggregated\_last\_seen | string | 
-action\_result\.data\.\*\.aggregated\_network\_interfaces\_macs | string | 
-action\_result\.data\.\*\.aggregated\_network\_interfaces\_ips | string |  `ip` 
-action\_result\.data\.\*\.aggregated\_os\_type | string | 
-action\_result\.data\.\*\.labels | string | 
-action\_result\.status | string | 
-action\_result\.message | string | 
-action\_result\.summary | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.parameter.sq_name | string |  |  
+action_result.parameter.max_rows | numeric |  |  
+action_result.data.\*.adapter_list_length | numeric |  |  
+action_result.data.\*.adapters | string |  |  
+action_result.data.\*.internal_axon_id | string |  |  
+action_result.data.\*.aggregated_hostname | string |  `host name`  |  
+action_result.data.\*.aggregated_name | string |  |  
+action_result.data.\*.aggregated_last_seen | string |  |  
+action_result.data.\*.aggregated_network_interfaces_macs | string |  |  
+action_result.data.\*.aggregated_network_interfaces_ips | string |  `ip`  |  
+action_result.data.\*.aggregated_os_type | string |  |  
+action_result.data.\*.labels | string |  |  
+action_result.status | string |  |   success  failed 
+action_result.message | string |  |  
+action_result.summary | string |  |  
+summary.total_objects | numeric |  |   1 
+summary.total_objects_successful | numeric |  |   1   
 
 ## action: 'devices by hostname'
 Get devices by hostname
@@ -125,30 +125,30 @@ Read only: **True**
 PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 --------- | -------- | ----------- | ---- | --------
 **hostname** |  required  | The hostname of the Axonius asset | string |  `host name` 
-**max\_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
-**additional\_fields** |  optional  | Additional fields to include as part of the request \(comma\-separated\) | string | 
+**max_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
+**additional_fields** |  optional  | Additional fields to include as part of the request (comma-separated) | string | 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.parameter\.hostname | string |  `host name` 
-action\_result\.parameter\.max\_rows | numeric | 
-action\_result\.parameter\.additional\_fields | string | 
-action\_result\.data\.\*\.adapter\_list\_length | numeric | 
-action\_result\.data\.\*\.adapters | string | 
-action\_result\.data\.\*\.internal\_axon\_id | string | 
-action\_result\.data\.\*\.aggregated\_hostname | string |  `host name` 
-action\_result\.data\.\*\.aggregated\_name | string | 
-action\_result\.data\.\*\.aggregated\_last\_seen | string | 
-action\_result\.data\.\*\.aggregated\_network\_interfaces\_macs | string | 
-action\_result\.data\.\*\.aggregated\_network\_interfaces\_ips | string |  `ip` 
-action\_result\.data\.\*\.aggregated\_os\_type | string | 
-action\_result\.data\.\*\.labels | string | 
-action\_result\.status | string | 
-action\_result\.message | string | 
-action\_result\.summary | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.parameter.hostname | string |  `host name`  |  
+action_result.parameter.max_rows | numeric |  |   25 
+action_result.parameter.additional_fields | string |  |  
+action_result.data.\*.adapter_list_length | numeric |  |  
+action_result.data.\*.adapters | string |  |  
+action_result.data.\*.internal_axon_id | string |  |  
+action_result.data.\*.aggregated_hostname | string |  `host name`  |  
+action_result.data.\*.aggregated_name | string |  |  
+action_result.data.\*.aggregated_last_seen | string |  |  
+action_result.data.\*.aggregated_network_interfaces_macs | string |  |  
+action_result.data.\*.aggregated_network_interfaces_ips | string |  `ip`  |  
+action_result.data.\*.aggregated_os_type | string |  |  
+action_result.data.\*.labels | string |  |  
+action_result.status | string |  |   success  failed 
+action_result.message | string |  |  
+action_result.summary | string |  |  
+summary.total_objects | numeric |  |   1 
+summary.total_objects_successful | numeric |  |   1   
 
 ## action: 'devices by ip'
 Get devices by IP address
@@ -160,30 +160,30 @@ Read only: **True**
 PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 --------- | -------- | ----------- | ---- | --------
 **ip** |  required  | The IP address of the Axonius asset | string |  `ip` 
-**max\_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
-**additional\_fields** |  optional  | Additional fields to include as part of the request \(comma\-separated\) | string | 
+**max_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
+**additional_fields** |  optional  | Additional fields to include as part of the request (comma-separated) | string | 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.parameter\.ip | string |  `ip` 
-action\_result\.parameter\.max\_rows | numeric | 
-action\_result\.parameter\.additional\_fields | string | 
-action\_result\.data\.\*\.adapter\_list\_length | numeric | 
-action\_result\.data\.\*\.adapters | string | 
-action\_result\.data\.\*\.internal\_axon\_id | string | 
-action\_result\.data\.\*\.aggregated\_hostname | string |  `host name` 
-action\_result\.data\.\*\.aggregated\_name | string | 
-action\_result\.data\.\*\.aggregated\_last\_seen | string | 
-action\_result\.data\.\*\.aggregated\_network\_interfaces\_macs | string | 
-action\_result\.data\.\*\.aggregated\_network\_interfaces\_ips | string |  `ip` 
-action\_result\.data\.\*\.aggregated\_os\_type | string | 
-action\_result\.data\.\*\.labels | string | 
-action\_result\.status | string | 
-action\_result\.message | string | 
-action\_result\.summary | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.parameter.ip | string |  `ip`  |  
+action_result.parameter.max_rows | numeric |  |   25 
+action_result.parameter.additional_fields | string |  |  
+action_result.data.\*.adapter_list_length | numeric |  |  
+action_result.data.\*.adapters | string |  |  
+action_result.data.\*.internal_axon_id | string |  |  
+action_result.data.\*.aggregated_hostname | string |  `host name`  |  
+action_result.data.\*.aggregated_name | string |  |  
+action_result.data.\*.aggregated_last_seen | string |  |  
+action_result.data.\*.aggregated_network_interfaces_macs | string |  |  
+action_result.data.\*.aggregated_network_interfaces_ips | string |  `ip`  |  
+action_result.data.\*.aggregated_os_type | string |  |  
+action_result.data.\*.labels | string |  |  
+action_result.status | string |  |   success  failed 
+action_result.message | string |  |  
+action_result.summary | string |  |  
+summary.total_objects | numeric |  |   1 
+summary.total_objects_successful | numeric |  |   1   
 
 ## action: 'devices by mac'
 Get devices by MAC address
@@ -195,30 +195,30 @@ Read only: **True**
 PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 --------- | -------- | ----------- | ---- | --------
 **mac** |  required  | The MAC address of the Axonius asset | string |  `mac address` 
-**max\_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
-**additional\_fields** |  optional  | Additional fields to include as part of the request \(comma\-separated\) | string | 
+**max_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
+**additional_fields** |  optional  | Additional fields to include as part of the request (comma-separated) | string | 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.parameter\.mac | string |  `mac address` 
-action\_result\.parameter\.max\_rows | numeric | 
-action\_result\.parameter\.additional\_fields | string | 
-action\_result\.data\.\*\.adapter\_list\_length | numeric | 
-action\_result\.data\.\*\.adapters | string | 
-action\_result\.data\.\*\.internal\_axon\_id | string | 
-action\_result\.data\.\*\.aggregated\_hostname | string |  `host name` 
-action\_result\.data\.\*\.aggregated\_name | string | 
-action\_result\.data\.\*\.aggregated\_last\_seen | string | 
-action\_result\.data\.\*\.aggregated\_network\_interfaces\_macs | string | 
-action\_result\.data\.\*\.aggregated\_network\_interfaces\_ips | string |  `ip` 
-action\_result\.data\.\*\.aggregated\_os\_type | string | 
-action\_result\.data\.\*\.labels | string | 
-action\_result\.status | string | 
-action\_result\.message | string | 
-action\_result\.summary | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.parameter.mac | string |  `mac address`  |  
+action_result.parameter.max_rows | numeric |  |   25 
+action_result.parameter.additional_fields | string |  |  
+action_result.data.\*.adapter_list_length | numeric |  |  
+action_result.data.\*.adapters | string |  |  
+action_result.data.\*.internal_axon_id | string |  |  
+action_result.data.\*.aggregated_hostname | string |  `host name`  |  
+action_result.data.\*.aggregated_name | string |  |  
+action_result.data.\*.aggregated_last_seen | string |  |  
+action_result.data.\*.aggregated_network_interfaces_macs | string |  |  
+action_result.data.\*.aggregated_network_interfaces_ips | string |  `ip`  |  
+action_result.data.\*.aggregated_os_type | string |  |  
+action_result.data.\*.labels | string |  |  
+action_result.status | string |  |   success  failed 
+action_result.message | string |  |  
+action_result.summary | string |  |  
+summary.total_objects | numeric |  |   1 
+summary.total_objects_successful | numeric |  |   1   
 
 ## action: 'users by sq'
 Get users by a saved query
@@ -229,27 +229,27 @@ Read only: **True**
 #### Action Parameters
 PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 --------- | -------- | ----------- | ---- | --------
-**sq\_name** |  required  | The name of the Axonius saved query | string | 
-**max\_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
+**sq_name** |  required  | The name of the Axonius saved query | string | 
+**max_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.parameter\.sq\_name | string | 
-action\_result\.parameter\.max\_rows | numeric | 
-action\_result\.data\.\*\.adapter\_list\_length | numeric | 
-action\_result\.data\.\*\.adapters | string | 
-action\_result\.data\.\*\.internal\_axon\_id | string | 
-action\_result\.data\.\*\.aggregated\_username | string | 
-action\_result\.data\.\*\.aggregated\_mail | string | 
-action\_result\.data\.\*\.aggregated\_last\_seen | string | 
-action\_result\.data\.\*\.aggregated\_is\_admin | string | 
-action\_result\.data\.\*\.labels | string | 
-action\_result\.status | string | 
-action\_result\.message | string | 
-action\_result\.summary | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.parameter.sq_name | string |  |  
+action_result.parameter.max_rows | numeric |  |   25 
+action_result.data.\*.adapter_list_length | numeric |  |  
+action_result.data.\*.adapters | string |  |  
+action_result.data.\*.internal_axon_id | string |  |  
+action_result.data.\*.aggregated_username | string |  |  
+action_result.data.\*.aggregated_mail | string |  |  
+action_result.data.\*.aggregated_last_seen | string |  |  
+action_result.data.\*.aggregated_is_admin | string |  |  
+action_result.data.\*.labels | string |  |  
+action_result.status | string |  |   success  failed 
+action_result.message | string |  |  
+action_result.summary | string |  |  
+summary.total_objects | numeric |  |   1 
+summary.total_objects_successful | numeric |  |   1   
 
 ## action: 'users by mail'
 Get users by email address
@@ -261,28 +261,28 @@ Read only: **True**
 PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 --------- | -------- | ----------- | ---- | --------
 **mail** |  required  | The email address of the Axonius user | string |  `email` 
-**max\_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
-**additional\_fields** |  optional  | Additional fields to include as part of the request \(comma\-separated\) | string | 
+**max_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
+**additional_fields** |  optional  | Additional fields to include as part of the request (comma-separated) | string | 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.parameter\.mail | string |  `email` 
-action\_result\.parameter\.max\_rows | numeric | 
-action\_result\.parameter\.additional\_fields | string | 
-action\_result\.data\.\*\.adapter\_list\_length | numeric | 
-action\_result\.data\.\*\.adapters | string | 
-action\_result\.data\.\*\.internal\_axon\_id | string | 
-action\_result\.data\.\*\.aggregated\_username | string | 
-action\_result\.data\.\*\.aggregated\_mail | string | 
-action\_result\.data\.\*\.aggregated\_last\_seen | string | 
-action\_result\.data\.\*\.aggregated\_is\_admin | string | 
-action\_result\.data\.\*\.labels | string | 
-action\_result\.status | string | 
-action\_result\.message | string | 
-action\_result\.summary | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.parameter.mail | string |  `email`  |  
+action_result.parameter.max_rows | numeric |  |   25 
+action_result.parameter.additional_fields | string |  |  
+action_result.data.\*.adapter_list_length | numeric |  |  
+action_result.data.\*.adapters | string |  |  
+action_result.data.\*.internal_axon_id | string |  |  
+action_result.data.\*.aggregated_username | string |  |  
+action_result.data.\*.aggregated_mail | string |  |  
+action_result.data.\*.aggregated_last_seen | string |  |  
+action_result.data.\*.aggregated_is_admin | string |  |  
+action_result.data.\*.labels | string |  |  
+action_result.status | string |  |   success  failed 
+action_result.message | string |  |  
+action_result.summary | string |  |  
+summary.total_objects | numeric |  |   1 
+summary.total_objects_successful | numeric |  |   1   
 
 ## action: 'users by username'
 Get users by username
@@ -294,25 +294,25 @@ Read only: **True**
 PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 --------- | -------- | ----------- | ---- | --------
 **username** |  required  | The username of the Axonius user | string | 
-**max\_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
-**additional\_fields** |  optional  | Additional fields to include as part of the request \(comma\-separated\) | string | 
+**max_rows** |  optional  | The maximum number of rows to be returned by Axonius | numeric | 
+**additional_fields** |  optional  | Additional fields to include as part of the request (comma-separated) | string | 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.parameter\.username | string | 
-action\_result\.parameter\.max\_rows | numeric | 
-action\_result\.parameter\.additional\_fields | string | 
-action\_result\.data\.\*\.adapter\_list\_length | numeric | 
-action\_result\.data\.\*\.adapters | string | 
-action\_result\.data\.\*\.internal\_axon\_id | string | 
-action\_result\.data\.\*\.aggregated\_username | string | 
-action\_result\.data\.\*\.aggregated\_mail | string | 
-action\_result\.data\.\*\.aggregated\_last\_seen | string | 
-action\_result\.data\.\*\.aggregated\_is\_admin | string | 
-action\_result\.data\.\*\.labels | string | 
-action\_result\.status | string | 
-action\_result\.message | string | 
-action\_result\.summary | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric | 
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.parameter.username | string |  |  
+action_result.parameter.max_rows | numeric |  |   25 
+action_result.parameter.additional_fields | string |  |  
+action_result.data.\*.adapter_list_length | numeric |  |  
+action_result.data.\*.adapters | string |  |  
+action_result.data.\*.internal_axon_id | string |  |  
+action_result.data.\*.aggregated_username | string |  |  
+action_result.data.\*.aggregated_mail | string |  |  
+action_result.data.\*.aggregated_last_seen | string |  |  
+action_result.data.\*.aggregated_is_admin | string |  |  
+action_result.data.\*.labels | string |  |  
+action_result.status | string |  |   success  failed 
+action_result.message | string |  |  
+action_result.summary | string |  |  
+summary.total_objects | numeric |  |   1 
+summary.total_objects_successful | numeric |  |   1 
