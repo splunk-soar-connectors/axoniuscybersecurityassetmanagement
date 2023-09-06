@@ -1,6 +1,6 @@
 # File: axoniuscybersecurityassetmanagement_connector.py
 #
-# Copyright (c) Axonius, 2018-2022
+# Copyright (c) Axonius, 2018-2023
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -174,6 +174,9 @@ class AxoniusConnector(BaseConnector):
 
     def _handle_test_connectivity(self, param: dict) -> bool:
         """Test that we can login to Axonius using the Axonius API Client."""
+        self.save_progress(f"req version: {requests.__version__}")
+        path = os.path.abspath(requests.__file__)
+        self.save_progress(f"path:: {path}")
         action_result: phantom.ActionResult = ActionResult(dict(param))
         self.add_action_result(action_result)
 
