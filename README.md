@@ -2,7 +2,7 @@
 # Axonius Cybersecurity Asset Management
 
 Publisher: Axonius  
-Connector Version: 2.1.3  
+Connector Version: 2.2.0  
 Product Vendor: Axonius  
 Product Name: Axonius  
 Product Version Supported (regex): ".\*"  
