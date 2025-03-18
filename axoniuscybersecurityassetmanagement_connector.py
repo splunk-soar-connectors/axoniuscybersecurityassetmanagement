@@ -1,6 +1,6 @@
 # File: axoniuscybersecurityassetmanagement_connector.py
 #
-# Copyright (c) Axonius, 2018-2023
+# Copyright (c) Axonius, 2018-2025
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 # Phantom App imports
 import json
 import os
-from typing import Any, List, Optional, Union
+from typing import Any, Optional, Union
 
 import phantom.app as phantom
 import requests
@@ -30,16 +30,12 @@ from phantom.base_connector import BaseConnector
 from axoniuscybersecurityassetmanagement_consts import *
 
 
-def get_str_arg(
-    param: dict, key: str, required: bool = False, default: str = ""
-) -> str:
+def get_str_arg(param: dict, key: str, required: bool = False, default: str = "") -> str:
     """Get a key from a command arg and convert it into an str."""
     value = param.get(key, default)
 
     if not isinstance(value, str):
-        raise ValueError(
-            f"Please provide a valid string value for the parameter '{key!r}'"
-        )
+        raise ValueError(f"Please provide a valid string value for the parameter '{key!r}'")
 
     value = value.strip()
 
@@ -102,11 +98,7 @@ def parse_key(key: str) -> str:
 
 def parse_asset(asset: dict) -> dict:
     """Initiate field format correction on assets."""
-    return {
-        parse_key(key=k): parse_kv(key=k, value=v)
-        for k, v in asset.items()
-        if k not in SKIPS
-    }
+    return {parse_key(key=k): parse_kv(key=k, value=v) for k, v in asset.items() if k not in SKIPS}
 
 
 class AxoniusConnector(BaseConnector):
@@ -114,7 +106,7 @@ class AxoniusConnector(BaseConnector):
 
     def __init__(self):
         """Axonius App Constructor."""
-        super(AxoniusConnector, self).__init__()
+        super().__init__()
         self._client: Connect = None
         self._client_args: dict = {}
 
@@ -138,7 +130,7 @@ class AxoniusConnector(BaseConnector):
         except:
             pass
 
-        return "Error Code: {0}. Error Message: {1}".format(err_code, err_msg)
+        return f"Error Code: {err_code}. Error Message: {err_msg}"
 
     def _create_client(self, action_result: phantom.ActionResult) -> bool:
         """Create an instance of Axonius API Client."""
@@ -214,9 +206,7 @@ class AxoniusConnector(BaseConnector):
         self.save_progress(progress)
 
         try:
-            assets: List[dict] = apiobj.get_by_saved_query(
-                name=sq_name, max_rows=max_rows, field_null=True, field_null_value=[]
-            )
+            assets: list[dict] = apiobj.get_by_saved_query(name=sq_name, max_rows=max_rows, field_null=True, field_null_value=[])
         except Exception as exc:
             err_message = self._get_error_message_from_exception(exc)
             status = f"Failed to fetch Saved Query: {err_message}"
@@ -251,11 +241,9 @@ class AxoniusConnector(BaseConnector):
 
         additional_fields = []
         try:
-            additional_fields_str: str = get_str_arg(
-                key=ADDITIONAL_FIELDS_KEY, param=param
-            )
+            additional_fields_str: str = get_str_arg(key=ADDITIONAL_FIELDS_KEY, param=param)
             if len(additional_fields_str) > 0:
-                additional_fields = [x.strip() for x in additional_fields_str.split(',')]
+                additional_fields = [x.strip() for x in additional_fields_str.split(",")]
                 additional_fields = list(filter(None, additional_fields))
         except Exception as exc:
             err_message = self._get_error_message_from_exception(exc)
@@ -272,7 +260,7 @@ class AxoniusConnector(BaseConnector):
         self.save_progress(progress)
 
         try:
-            assets: List[dict] = apiobj.get_by_value(
+            assets: list[dict] = apiobj.get_by_value(
                 value=hostname,
                 field="specific_data.data.hostname",
                 fields=additional_fields,
@@ -314,11 +302,9 @@ class AxoniusConnector(BaseConnector):
 
         additional_fields = []
         try:
-            additional_fields_str: str = get_str_arg(
-                key=ADDITIONAL_FIELDS_KEY, param=param
-            )
+            additional_fields_str: str = get_str_arg(key=ADDITIONAL_FIELDS_KEY, param=param)
             if len(additional_fields_str) > 0:
-                additional_fields = [x.strip() for x in additional_fields_str.split(',')]
+                additional_fields = [x.strip() for x in additional_fields_str.split(",")]
                 additional_fields = list(filter(None, additional_fields))
         except Exception as exc:
             err_message = self._get_error_message_from_exception(exc)
@@ -335,7 +321,7 @@ class AxoniusConnector(BaseConnector):
         self.save_progress(progress)
 
         try:
-            assets: List[dict] = apiobj.get_by_value(
+            assets: list[dict] = apiobj.get_by_value(
                 value=ip,
                 field="specific_data.data.network_interfaces.ips",
                 fields=additional_fields,
@@ -377,11 +363,9 @@ class AxoniusConnector(BaseConnector):
 
         additional_fields = []
         try:
-            additional_fields_str: str = get_str_arg(
-                key=ADDITIONAL_FIELDS_KEY, param=param
-            )
+            additional_fields_str: str = get_str_arg(key=ADDITIONAL_FIELDS_KEY, param=param)
             if len(additional_fields_str) > 0:
-                additional_fields = [x.strip() for x in additional_fields_str.split(',')]
+                additional_fields = [x.strip() for x in additional_fields_str.split(",")]
                 additional_fields = list(filter(None, additional_fields))
         except Exception as exc:
             err_message = self._get_error_message_from_exception(exc)
@@ -398,7 +382,7 @@ class AxoniusConnector(BaseConnector):
         self.save_progress(progress)
 
         try:
-            assets: List[dict] = apiobj.get_by_value(
+            assets: list[dict] = apiobj.get_by_value(
                 value=mac,
                 field="specific_data.data.network_interfaces.mac",
                 fields=additional_fields,
@@ -448,9 +432,7 @@ class AxoniusConnector(BaseConnector):
         self.save_progress(progress)
 
         try:
-            assets: List[dict] = apiobj.get_by_saved_query(
-                name=sq_name, max_rows=max_rows, field_null=True, field_null_value=[]
-            )
+            assets: list[dict] = apiobj.get_by_saved_query(name=sq_name, max_rows=max_rows, field_null=True, field_null_value=[])
         except Exception as exc:
             err_message = self._get_error_message_from_exception(exc)
             status = f"Failed to fetch Saved Query: {err_message}"
@@ -485,11 +467,9 @@ class AxoniusConnector(BaseConnector):
 
         additional_fields = []
         try:
-            additional_fields_str: str = get_str_arg(
-                key=ADDITIONAL_FIELDS_KEY, param=param
-            )
+            additional_fields_str: str = get_str_arg(key=ADDITIONAL_FIELDS_KEY, param=param)
             if len(additional_fields_str) > 0:
-                additional_fields = [x.strip() for x in additional_fields_str.split(',')]
+                additional_fields = [x.strip() for x in additional_fields_str.split(",")]
                 additional_fields = list(filter(None, additional_fields))
         except Exception as exc:
             err_message = self._get_error_message_from_exception(exc)
@@ -506,7 +486,7 @@ class AxoniusConnector(BaseConnector):
         self.save_progress(progress)
 
         try:
-            assets: List[dict] = apiobj.get_by_value(
+            assets: list[dict] = apiobj.get_by_value(
                 value=mail,
                 field="specific_data.data.mail",
                 fields=additional_fields,
@@ -548,11 +528,9 @@ class AxoniusConnector(BaseConnector):
 
         additional_fields = []
         try:
-            additional_fields_str: str = get_str_arg(
-                key=ADDITIONAL_FIELDS_KEY, param=param
-            )
+            additional_fields_str: str = get_str_arg(key=ADDITIONAL_FIELDS_KEY, param=param)
             if len(additional_fields_str) > 0:
-                additional_fields = [x.strip() for x in additional_fields_str.split(',')]
+                additional_fields = [x.strip() for x in additional_fields_str.split(",")]
                 additional_fields = list(filter(None, additional_fields))
         except Exception as exc:
             err_message = self._get_error_message_from_exception(exc)
@@ -569,7 +547,7 @@ class AxoniusConnector(BaseConnector):
         self.save_progress(progress)
 
         try:
-            assets: List[dict] = apiobj.get_by_value(
+            assets: list[dict] = apiobj.get_by_value(
                 value=username,
                 field="specific_data.data.username",
                 fields=additional_fields,
@@ -597,7 +575,7 @@ class AxoniusConnector(BaseConnector):
         """Launch point for Phantom actions."""
         ret_val: bool = phantom.APP_SUCCESS
         action_id: str = self.get_action_identifier()
-        self.debug_print("action_id: {}".format(action_id))
+        self.debug_print(f"action_id: {action_id}")
 
         try:
             if action_id == "test_connectivity":
@@ -605,9 +583,7 @@ class AxoniusConnector(BaseConnector):
             elif action_id == "devices_by_sq":
                 ret_val = self._handle_devices_by_sq(param=param, obj_type="devices")
             elif action_id == "devices_by_hostname":
-                ret_val = self._handle_devices_by_hostname(
-                    param=param, obj_type="devices"
-                )
+                ret_val = self._handle_devices_by_hostname(param=param, obj_type="devices")
             elif action_id == "devices_by_ip":
                 ret_val = self._handle_devices_by_ip(param=param, obj_type="devices")
             elif action_id == "devices_by_mac":
@@ -633,9 +609,7 @@ class AxoniusConnector(BaseConnector):
 
         if not isinstance(self._state, dict):
             self.debug_print("Resetting the state file with the default format")
-            self._state = {
-                "app_version": self.get_app_json().get('app_version')
-            }
+            self._state = {"app_version": self.get_app_json().get("app_version")}
             return self.set_status(phantom.APP_ERROR, STATE_FILE_CORRUPT_ERR)
 
         self._url: str = config[URL_KEY]
@@ -664,7 +638,6 @@ class AxoniusConnector(BaseConnector):
 
 
 if __name__ == "__main__":
-
     import argparse
     import sys
 
@@ -677,7 +650,7 @@ if __name__ == "__main__":
     argparser.add_argument("input_test_json", help="Input Test JSON file")
     argparser.add_argument("-u", "--username", help="username", required=False)
     argparser.add_argument("-p", "--password", help="password", required=False)
-    argparser.add_argument('-v', '--verify', action='store_true', help='verify', required=False, default=False)
+    argparser.add_argument("-v", "--verify", action="store_true", help="verify", required=False, default=False)
 
     args = argparser.parse_args()
     session_id = None
