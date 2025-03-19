@@ -1,6 +1,6 @@
 # File: axoniuscybersecurityassetmanagement_consts.py
 #
-# Copyright (c) Axonius, 2018-2023
+# Copyright (c) Axonius, 2018-2025
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -39,16 +39,11 @@ FIELDS_TIME = ["seen", "fetch", "time", "date"]
 
 # exception handling
 ERR_CODE_MSG = "Error code unavailable"
-ERR_MSG_UNAVAILABLE = (
-    "Error message unavailable. Please check the asset configuration and|or action"
-    " parameters"
-)
+ERR_MSG_UNAVAILABLE = "Error message unavailable. Please check the asset configuration and|or action parameters"
 
 # Integer validation constants
 VALID_INTEGER_MSG = "Please provide a valid integer value for the parameter '{key}'"
-NON_NEGATIVE_INTEGER_MSG = (
-    "Please provide a valid non-negative integer value for the parameter '{key}'"
-)
+NON_NEGATIVE_INTEGER_MSG = "Please provide a valid non-negative integer value for the parameter '{key}'"
 
 STATE_FILE_CORRUPT_ERR = (
     "Error occurred while loading the state file due to its unexpected format."
