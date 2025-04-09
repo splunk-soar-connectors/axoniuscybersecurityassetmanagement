@@ -17,13 +17,6 @@
     "min_phantom_version": "5.5.0",
     "python_version": "3",
     "app_wizard_version": "1.0.0",
-    "pip_dependencies": {
-        "pypi": [
-            {
-                "module": "axonius_api_client"
-            }
-        ]
-    },
     "configuration": {
         "api_key": {
             "description": "API Key",
