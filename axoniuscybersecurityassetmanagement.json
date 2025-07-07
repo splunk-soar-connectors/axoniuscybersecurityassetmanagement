@@ -9,8 +9,13 @@
     "product_name": "Axonius",
     "product_version_regex": ".*",
     "publisher": "Axonius",
+    "contributors": [
+      {
+        "name": "Sahar Hagbi"
+      }
+    ],
     "license": "Copyright (c) Axonius, 2018-2025",
-    "app_version": "2.2.0",
+    "app_version": "2.2.1",
     "utctime_updated": "2022-01-07T21:37:39.000000Z",
     "package_name": "phantom_axoniuscybersecurityassetmanagement",
     "main_module": "axoniuscybersecurityassetmanagement_connector.py",
