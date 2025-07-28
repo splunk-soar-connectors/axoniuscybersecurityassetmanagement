@@ -1,80 +1,33 @@
-Splunk SOAR Axonius Cybersecurity Asset Management
-Copyright (c) Axonius, 2018-2023
+Splunk SOAR App: Axonius Cybersecurity Asset Management
+Copyright (c) Axonius, 2018-2025
+Third Party Software Attributions:
 
-Third-party Software Attributions:
+@@@@============================================================================
 
-Library: PySocks
-Version: 1.7.1
-License: BSD 2
-Copyright 2006 Dan-Haim
-Copyright 2006 Dan-Haim
+Library: axonius_api_client - 5.0.21
+Homepage: https://github.com/Axonius/axonius_api_client
+License: MIT License
+License Text:
 
-Library: XlsxWriter
-Version: 3.0.3
-License: BSD 2
-Copyright 2013-2022 John McNamara <jmcnamara@cpan.org>
+MIT License
 
-Library: cachetools
-Version: 5.0.0
-License: MIT
-Copyright 2014-2021 Thomas Kemmer
-Copyright 2014-2021 Thomas Kemmer
+Copyright (c) 2022 Axonius
 
-Library: fuzzyfinder
-Version: 2.1.0
-License: BSD License (BSD)
-Copyright (c) 2015, Amjith Ramanujam
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Library: importlib-metadata
-Version: 4.11.3
-License: Apache 2.0
-Copyright 2017-2019 Jason R. Coombs
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Library: packaging
-Version: 21.3
-License: Apache 2.0
-License: BSD 2
-Copyright Donald Stufft and individual contributors
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-Library: pycparser
-Version: 2.21
-License: BSD 3
-Copyright 2008-2020 Eli Bendersky
-Copyright parser in Python
-Copyright parser in Python
-
-Library: python-dateutil
-Version: 2.8.2
-License: Apache 2.0
-License: BSD 3
-Copyright 2015 - Paul Ganssle <paul@ganssle.io>
-Copyright 2015 - dateutil contributors (see AUTHORS file)
-Copyright 2017 Paul Ganssle <paul@ganssle.io>
-Copyright 2017 dateutil contributors (see AUTHORS file)
-
-Library: python-dotenv
-Version: 0.19.2
-License: BSD 3
-Copyright 2013 Jacob Kaplan-Moss
-Copyright 2013 Ted Tieken
-Copyright 2014 Saurabh Kumar
-
-Library: requests
-Version: 2.25.1
-License: Apache 2.0
-Kenneth Reitz
-
-Library: tabulate
-Version: 0.8.9
-License: MIT
-Copyright 2011-2020 Sergey Astanin and contributors
-
-Library: typing-inspect
-Version: 0.7.1
-License: MIT
-Copyright 2017-2019 Ivan Levkivskyi
-
-Library: xmltodict
-Version: 0.12.0
-License: MIT
-Copyright 2012 Martin Blech and individual contributors
