@@ -18,6 +18,7 @@
 API_KEY = "api_key"  # pragma: allowlist secret
 API_SECRET = "api_secret"  # pragma: allowlist secret
 URL_KEY = "url"
+VERIFY_SERVER_CERT_KEY = "verify_server_cert"
 PROXY_URL_KEY = "proxy_url"
 SQ_NAME_KEY = "sq_name"
 MAX_ROWS_KEY = "max_rows"

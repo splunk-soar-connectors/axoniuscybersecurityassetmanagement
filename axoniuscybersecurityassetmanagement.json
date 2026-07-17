@@ -52,6 +52,13 @@
             "description": "HTTPS Proxy URL",
             "data_type": "string",
             "order": 3
+        },
+        "verify_server_cert": {
+            "description": "Verify the Axonius server certificate",
+            "data_type": "boolean",
+            "default": true,
+            "required": false,
+            "order": 4
         }
     },
     "actions": [
