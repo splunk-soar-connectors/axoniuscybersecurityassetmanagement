@@ -1,6 +1,6 @@
 # File: axoniuscybersecurityassetmanagement_connector.py
 #
-# Copyright (c) Axonius, 2018-2025
+# Copyright (c) Axonius, 2018-2026
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -618,13 +618,11 @@ class AxoniusConnector(BaseConnector):
         self._client_args["key"] = config[API_KEY]
         self._client_args["secret"] = config[API_SECRET]
         self._client_args["url"] = config[URL_KEY]
-        self._client_args["certverify"] = False
+        self._client_args["certverify"] = config.get(VERIFY_SERVER_CERT_KEY, True)
         self._client_args["proxy"] = config.get(PROXY_URL_KEY)
 
         env_vars: dict = config.get("_reserved_environment_variables", {})
 
-        # TBD Figure out a better way for this later
-        os.environ.pop("REQUESTS_CA_BUNDLE", None)
         if "HTTPS_PROXY" in env_vars:
             self._client_args["proxy"] = env_vars["HTTPS_PROXY"]["value"]
 

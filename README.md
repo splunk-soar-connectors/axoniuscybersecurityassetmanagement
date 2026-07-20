@@ -1,9 +1,9 @@
 # Axonius Cybersecurity Asset Management
 
-Publisher: Axonius \
-Connector Version: 2.2.1 \
-Product Vendor: Axonius \
-Product Name: Axonius \
+Publisher: Axonius <br>
+Connector Version: 2.2.1 <br>
+Product Vendor: Axonius <br>
+Product Name: Axonius <br>
 Minimum Product Version: 5.5.0
 
 This app integrates with the Axonius Cybersecurity Asset Management Platform to enrich asset data for investigations
@@ -38,23 +38,24 @@ VARIABLE | REQUIRED | TYPE | DESCRIPTION
 **api_secret** | required | password | API Secret |
 **url** | required | string | Axonius Instance URL |
 **proxy_url** | optional | string | HTTPS Proxy URL |
+**verify_server_cert** | optional | boolean | Verify the Axonius server certificate |
 
 ### Supported Actions
 
-[test connectivity](#action-test-connectivity) - Validate the asset configuration for connectivity using the supplied configuration \
-[devices by sq](#action-devices-by-sq) - Get devices by a saved query \
-[devices by hostname](#action-devices-by-hostname) - Get devices by hostname \
-[devices by ip](#action-devices-by-ip) - Get devices by IP address \
-[devices by mac](#action-devices-by-mac) - Get devices by MAC address \
-[users by sq](#action-users-by-sq) - Get users by a saved query \
-[users by mail](#action-users-by-mail) - Get users by email address \
+[test connectivity](#action-test-connectivity) - Validate the asset configuration for connectivity using the supplied configuration <br>
+[devices by sq](#action-devices-by-sq) - Get devices by a saved query <br>
+[devices by hostname](#action-devices-by-hostname) - Get devices by hostname <br>
+[devices by ip](#action-devices-by-ip) - Get devices by IP address <br>
+[devices by mac](#action-devices-by-mac) - Get devices by MAC address <br>
+[users by sq](#action-users-by-sq) - Get users by a saved query <br>
+[users by mail](#action-users-by-mail) - Get users by email address <br>
 [users by username](#action-users-by-username) - Get users by username
 
 ## action: 'test connectivity'
 
 Validate the asset configuration for connectivity using the supplied configuration
 
-Type: **test** \
+Type: **test** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -69,7 +70,7 @@ No Output
 
 Get devices by a saved query
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -105,7 +106,7 @@ summary.total_objects_successful | numeric | | 1 |
 
 Get devices by hostname
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -143,7 +144,7 @@ summary.total_objects_successful | numeric | | 1 |
 
 Get devices by IP address
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -181,7 +182,7 @@ summary.total_objects_successful | numeric | | 1 |
 
 Get devices by MAC address
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -219,7 +220,7 @@ summary.total_objects_successful | numeric | | 1 |
 
 Get users by a saved query
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -253,7 +254,7 @@ summary.total_objects_successful | numeric | | 1 |
 
 Get users by email address
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -289,7 +290,7 @@ summary.total_objects_successful | numeric | | 1 |
 
 Get users by username
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -325,7 +326,7 @@ ______________________________________________________________________
 
 Auto-generated Splunk SOAR Connector documentation.
 
-Copyright 2025 Splunk Inc.
+Copyright 2026 Splunk Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
