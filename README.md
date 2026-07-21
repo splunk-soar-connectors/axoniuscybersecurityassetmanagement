@@ -1,7 +1,7 @@
 # Axonius Cybersecurity Asset Management
 
 Publisher: Axonius <br>
-Connector Version: 2.2.1 <br>
+Connector Version: 2.2.2 <br>
 Product Vendor: Axonius <br>
 Product Name: Axonius <br>
 Minimum Product Version: 5.5.0
