@@ -1,1 +1,3 @@
 **Unreleased**
+
+* Recover missed publication after the 2.2.1 collision.
