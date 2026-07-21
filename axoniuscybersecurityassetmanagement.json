@@ -16,7 +16,7 @@
     ],
     "license": "Copyright (c) Axonius, 2018-2026",
     "app_version": "2.2.1",
-    "utctime_updated": "2022-01-07T21:37:39.000000Z",
+    "utctime_updated": "2026-07-21T05:00:00.620748Z",
     "package_name": "phantom_axoniuscybersecurityassetmanagement",
     "main_module": "axoniuscybersecurityassetmanagement_connector.py",
     "min_phantom_version": "5.5.0",
