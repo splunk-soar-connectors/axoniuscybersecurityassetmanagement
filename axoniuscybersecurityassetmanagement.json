@@ -12,6 +12,9 @@
     "contributors": [
         {
             "name": "Sahar Hagbi"
+        },
+        {
+            "name": "Chaim Gorbov"
         }
     ],
     "license": "Copyright (c) Axonius, 2018-2026",
@@ -20,7 +23,7 @@
     "package_name": "phantom_axoniuscybersecurityassetmanagement",
     "main_module": "axoniuscybersecurityassetmanagement_connector.py",
     "min_phantom_version": "5.5.0",
-    "python_version": "3",
+    "python_version": "3.9, 3.13",
     "app_wizard_version": "1.0.0",
     "pip_dependencies": {
         "pypi": [
@@ -945,7 +948,7 @@
             },
             {
                 "module": "cryptography",
-                "input_file": "wheels/py39/cryptography-49.0.0-cp39-abi3-manylinux_2_28_x86_64.whl"
+                "input_file": "wheels/py3/cryptography-46.0.3-cp38-abi3-manylinux_2_28_x86_64.whl"
             },
             {
                 "module": "dataclasses_json",
@@ -969,7 +972,7 @@
             },
             {
                 "module": "packaging",
-                "input_file": "wheels/py3/packaging-26.2-py3-none-any.whl"
+                "input_file": "wheels/py3/packaging-26.3-py3-none-any.whl"
             },
             {
                 "module": "pycparser",
@@ -977,7 +980,7 @@
             },
             {
                 "module": "pyopenssl",
-                "input_file": "wheels/py3/pyopenssl-26.3.0-py3-none-any.whl"
+                "input_file": "wheels/py3/pyopenssl-25.3.0-py3-none-any.whl"
             },
             {
                 "module": "python_dotenv",
@@ -996,8 +999,12 @@
                 "input_file": "wheels/py3/typing_inspect-0.9.0-py3-none-any.whl"
             },
             {
+                "module": "tzdata",
+                "input_file": "wheels/shared/tzdata-2026.6-py2.py3-none-any.whl"
+            },
+            {
                 "module": "xlsxwriter",
-                "input_file": "wheels/py3/xlsxwriter-3.2.9-py3-none-any.whl"
+                "input_file": "wheels/py3/xlsxwriter-3.3.1-py3-none-any.whl"
             }
         ]
     },
@@ -1021,19 +1028,19 @@
             },
             {
                 "module": "cachetools",
-                "input_file": "wheels/py3/cachetools-7.1.4-py3-none-any.whl"
+                "input_file": "wheels/py3/cachetools-7.2.8-py3-none-any.whl"
             },
             {
                 "module": "cffi",
-                "input_file": "wheels/py313/cffi-2.1.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+                "input_file": "wheels/py313/cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
             },
             {
                 "module": "click",
-                "input_file": "wheels/py3/click-8.4.2-py3-none-any.whl"
+                "input_file": "wheels/py3/click-8.5.0-py3-none-any.whl"
             },
             {
                 "module": "cryptography",
-                "input_file": "wheels/py3/cryptography-49.0.0-cp311-abi3-manylinux_2_28_x86_64.whl"
+                "input_file": "wheels/py3/cryptography-46.0.3-cp311-abi3-manylinux_2_28_x86_64.whl"
             },
             {
                 "module": "dataclasses_json",
@@ -1057,19 +1064,19 @@
             },
             {
                 "module": "packaging",
-                "input_file": "wheels/py3/packaging-26.2-py3-none-any.whl"
+                "input_file": "wheels/py3/packaging-26.3-py3-none-any.whl"
             },
             {
                 "module": "pycparser",
-                "input_file": "wheels/py3/pycparser-3.0-py3-none-any.whl"
+                "input_file": "wheels/py3/pycparser-3.12-py3-none-any.whl"
             },
             {
                 "module": "pyopenssl",
-                "input_file": "wheels/py3/pyopenssl-26.3.0-py3-none-any.whl"
+                "input_file": "wheels/py3/pyopenssl-25.3.0-py3-none-any.whl"
             },
             {
                 "module": "python_dotenv",
-                "input_file": "wheels/py3/python_dotenv-1.2.2-py3-none-any.whl"
+                "input_file": "wheels/py3/python_dotenv-1.2.4-py3-none-any.whl"
             },
             {
                 "module": "tabulate",
@@ -1084,8 +1091,12 @@
                 "input_file": "wheels/py3/typing_inspect-0.9.0-py3-none-any.whl"
             },
             {
+                "module": "tzdata",
+                "input_file": "wheels/shared/tzdata-2026.6-py2.py3-none-any.whl"
+            },
+            {
                 "module": "xlsxwriter",
-                "input_file": "wheels/py3/xlsxwriter-3.2.9-py3-none-any.whl"
+                "input_file": "wheels/py3/xlsxwriter-3.3.1-py3-none-any.whl"
             }
         ]
     }
