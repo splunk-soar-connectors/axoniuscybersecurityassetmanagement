@@ -12,6 +12,9 @@
     "contributors": [
         {
             "name": "Sahar Hagbi"
+        },
+        {
+            "name": "Chaim Gorbov"
         }
     ],
     "license": "Copyright (c) Axonius, 2018-2026",
@@ -20,7 +23,7 @@
     "package_name": "phantom_axoniuscybersecurityassetmanagement",
     "main_module": "axoniuscybersecurityassetmanagement_connector.py",
     "min_phantom_version": "5.5.0",
-    "python_version": "3",
+    "python_version": "3.9, 3.13",
     "app_wizard_version": "1.0.0",
     "pip_dependencies": {
         "pypi": [
